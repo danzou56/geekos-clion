@@ -70,7 +70,16 @@ the setup of the CLion debugger. In the standard suggested workflow, a gdb
 server is started in the form of running geekOS through QEMU. A separate shell
 must connect to the gdb server.
 
-## Docker modifications
+## Instructions 
+
+Performing the following sections in the listed order is recommended, but 
+possibly not required under certain circumstances.
+
+### Opening the project
+
+Do not import the project; open the folder containing the project. TODO: project
+root and vcs root may not match and may need to be updated after opening the 
+project
 
 ### Dockerfile
 
@@ -108,3 +117,19 @@ CMD ["/usr/sbin/sshd", "-D", "-e", "-f", "/etc/ssh/sshd_config_test_clion"]
    and you'll be able to `make submit` or `java -jar submit.jar` from within 
    the Docker container.
 
+### Makefile
+
+The changes you make to the Dockerfile will create incompatibilities as changes
+to gcc in more recent versions will prevent the project from compiling. Perform
+the following changes:
+
+1. TODO
+
+### CLion configuration
+
+TODO: Setup remote gcc/make/etc.
+TODO: Setup remote debugging
+
+### Debugging
+
+TODO: what to do when it doesn't work
